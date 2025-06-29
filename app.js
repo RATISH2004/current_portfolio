@@ -335,30 +335,42 @@ function filterProjects(filter) {
 function initializeContactForm() {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
         const message = formData.get('message');
-        
+
         // Basic validation
         if (!name || !email || !message) {
             showNotification('Please fill in all fields.', 'error');
             return;
         }
-        
         if (!isValidEmail(email)) {
             showNotification('Please enter a valid email address.', 'error');
             return;
         }
-        
-        // Simulate form submission
-        showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-        
-        // Reset form
-        this.reset();
+
+        // Send data to Formspree
+        fetch('https://formspree.io/f/xeoknqvl', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
+                showNotification('Oops! There was a problem submitting your form.', 'error');
+            }
+        })
+        .catch(() => {
+            showNotification('Network error. Please try again later.', 'error');
+        });
     });
 }
+
 
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
