@@ -13,7 +13,7 @@ const projectsData = [
     },
     {
         name: "GuardianAI",
-        description: "",
+        description: "Detect firearm in public places using CCTV footage and Deep Learning",
         tech: ["Python", "Deep Learning", "Object Detection","Face Detection", "Image Processing"],
         status: "✅ Fully done",
         github: "#",
