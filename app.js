@@ -4,8 +4,8 @@
 const projectsData = [
     {
         name: "Gmail Summarizer",
-        description: "Automated Gmail parsing & summarization via script + n8n",
-        tech: ["Python", "n8n", "NLP"],
+        description: "Automated Gmail parsing & summarization via script",
+        tech: ["Python", "GenAI" , "NLP"],
         status: "✅ Fully done",
         github: "#",
         demo: "#",
@@ -13,8 +13,8 @@ const projectsData = [
     },
     {
         name: "GuardianAI",
-        description: "ChatGPT API-based guardian assistant",
-        tech: ["Python", "GenAI", "OpenAI API"],
+        description: "",
+        tech: ["Python", "Deep Learning", "Object Detection","Face Detection", "Image Processing"],
         status: "✅ Fully done",
         github: "#",
         demo: "#",
@@ -23,7 +23,7 @@ const projectsData = [
     {
         name: "RSNA Lumbar Classification",
         description: "Medical image classification attempt",
-        tech: ["CNN", "Kaggle", "Medical Imaging"],
+        tech: ["CNN", "Tensorflow", "Medical Imaging"],
         status: "⚠️ Needs refinement",
         github: "#",
         demo: "#",
@@ -41,7 +41,7 @@ const projectsData = [
     {
         name: "Object Tracking Turret",
         description: "CV-controlled turret system",
-        tech: ["OpenCV", "Python", "Arduino"],
+        tech: ["OpenCV", "Python", "Arduino" , "Object detection"],
         status: "⚠️ Needs documentation",
         github: "#",
         demo: "#",
